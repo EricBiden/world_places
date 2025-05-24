@@ -20,6 +20,9 @@ class Place(models.Model):
                              on_delete=models.CASCADE)
     latitude= models.FloatField()
     longitude= models.FloatField()
+    is_pinned = models.BooleanField(default=False)
+    popullar = models.BooleanField(default=False)
+    beautifull = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name

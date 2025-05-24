@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block content %}
+    <!-- Start Main content -->
+    <main class="mt-30">
+        <div class="container single-content">
+            <div class="row vertical-divider mb-50">
+                <div class="col-lg-9 col-md-12">
+                    <div class="entry-header mb-30 mt-50">
+                        <div class="entry-meta meta-0 mb-15 font-small">
+                            <a href="category.html"><span class="post-cat position-relative"># World</span></a>
+                            <a href="category.html"><span class="post-cat position-relative"># Education</span></a>
+                        </div>
+                        <h1 class="entry-title mb-30 font-weight-500">
+                            {{post.name}}
+                        </h1>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="entry-meta align-items-center meta-2 font-small color-muted">
+                                    <span class="mr-10"> 20 May 2025</span>
+                                    <span class="has-dot"> 8 mins read</span>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 text-right">
+                                <div class="single-tools">
+                                    <div class="entry-meta align-items-center meta-2 font-small color-muted">
+                                        <span class="mr-15">
+                                            <span class="mr-5">Font size</span>
+                                            <i class="fonts-size-zoom-in ti-zoom-in mr-5"></i>
+                                            <i class="fonts-size-zoom-out ti-zoom-out"></i>
+                                        </span>
+                                        <a class="single-print mr-15"><span><i class="ti-printer mr-5"></i>Print</span></a>
+                                        <div class="vline-space d-inline-block"></div>
+                                        <a href="#"><span><i class="ti-email mr-5"></i>Email</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--  <figure class="image mb-30 m-auto text-center border-radius-2">
+                        <img src="http://via.placeholder.com/1332x497" alt="post-title">
+                    </figure> -->
+                    <figure class="post-thumb d-flex mb-30 border-radius-2 img-hover-scale animate-conner-box post-thum-video">
+                        <a>
+                            <img src="{{ post.image.url }}" alt="post-title">
+                        </a>
+                    </figure>
+                    <article class="entry-wraper mb-50">
+                        <p class="excerpt mb-30">
+                            {{post.name}}
+                        </p>
+                        <div class="entry-main-content dropcap wow fadeIn animated">
+                            <p>{{post.description}}</p>
+                            <figure class="wp-block-gallery columns-3 wp-block-image">
+                                <ul class="blocks-gallery-grid">
+                                    {% for image in post.images.all %}
+                                        <li class="blocks-gallery-item"><a href="#"><img class="border-radius-5" src="{{ image.image.url }}" alt=""></a></li>
+                                    {% endfor %}
+                                </ul>
+                                <figcaption> <i class="ti-credit-card mr-5"></i>Image credit: Behance </figcaption>
+                            </figure>
+                            <hr class="section-divider">
+                            </form>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            <!--end single header-->
+        </div>
+        <!--container-->
+    </main>
+<iframe width="600" height="450" style="border:0" loading="lazy" allowfullscreen src="https://www.google.com/maps?q={{post.latitude}},{{post.longitude}}&z=15&output=embed"> </iframe>
+    {% endblock %}
